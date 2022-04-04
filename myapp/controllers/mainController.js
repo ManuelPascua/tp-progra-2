@@ -3,7 +3,7 @@
 
 const bienvenida={
     index: function(req,res){
-        return res.render('hola')
+        return res.render('index')
     },
 }
 
