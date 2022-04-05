@@ -1,7 +1,7 @@
 
 
 
-const bienvenida={
+const main={
     index: function(req,res){
         return res.render('index')
     },
@@ -10,4 +10,4 @@ const bienvenida={
     },
 }
 
-module.exports=bienvenida
+module.exports=main
