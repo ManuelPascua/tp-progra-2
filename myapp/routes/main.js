@@ -7,7 +7,7 @@ router.get('/',mainController.index);
 
 router.get('/profile',mainController.profile);
 
-router.get('/index',mainController.index);
+router.get('/index',mainController.index);/// estoy casi seguro que esto esta mal 
 
 router.get('/register',mainController.register);
 
