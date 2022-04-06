@@ -13,6 +13,14 @@ router.get('/register',mainController.register);
 
 router.get('/products',mainController.products)
 
+router.get('/product-add',mainController.productAdd)
+
+router.get('/product-edit',mainController.productEdit)
+
+router.get('/login',mainController.login)
+
+
+
 
 
 module.exports = router;
