@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
 
+
 	<title> Mercado Liebre Argentina</title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -14,6 +15,7 @@
 	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="./stylesheets/app.css">
+	<link rel="stylesheet" href="../public/stylesheets/login.css">
 </head>
 
 <body>
@@ -81,16 +83,29 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
-			</div>
+	
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de login. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+			<form>
+				<h1>Ingresa a tu cuenta</h1>
+				<div class="inset">
+				<p>
+				  <label for="email"> email</label>
+				  <input type="text" name="email" id="email">
+				</p>
+				<p>
+				  <label for="password">CONTRASEÑA</label>
+				  <input type="password" name="password" id="password">
+				</p>
+				<p>
+				  <input type="checkbox" name="remember" id="remember">
+				  <label for="remember">Recordarme </label>
+				</p>
+				</div>
+				<p class="p-container">
+				  <span>Olvidaste tu contraseña?</span>
+				  <input type="submit" name="go" id="go" value="Log in">
+				</p>
+			  </form>
 
 
 	<!-- footer -->
