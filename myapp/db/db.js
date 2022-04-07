@@ -9,5 +9,12 @@ const data = {
         }
 }
 
+const productos = [{
+    imagen: '',
+    Nombre_del_producto: '',
+    descripción: '',
+    Fecha_de_carga: '',
+}]
+
 
 
