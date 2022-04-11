@@ -1,3 +1,6 @@
+const dataController = require('../db/db');
+
+
 const products= {
     index: function (req,res){
         return res.render('products')
@@ -10,4 +13,7 @@ const products= {
         return res.render('product-edit')
     },
 }
+
+
+
 module.exports= products
