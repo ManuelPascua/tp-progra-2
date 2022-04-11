@@ -3,7 +3,8 @@ const router=expres.Router();
 
 const mainController=require('../controllers/productsController')
 
-router.get('/',mainController.index);
+
+router.get('/id/:id',mainController.buscarPorMarca);
 router.get('/product-add',mainController.productAdd);
 
 
