@@ -1,9 +1,13 @@
-
-
+const data = require('../db/db')
+const dataController = require('../db/db')
 
 const main={
     index: function(req,res){
-        return res.render('index')
+        return res.render('index', {
+            lista : dataController.productos
+        })
+
+            
     },
     register: function(req,res){
         return res.render('register')
