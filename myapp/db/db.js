@@ -36,7 +36,7 @@ const data = {
         {
         imagen: '/images/products/DS9.jpeg',
         Nombre_del_producto: 'DS',
-        descripcion: '9',
+        descripcion: 'el auto',
         Fecha_de_carga: '25/05/2020',
         id:4,
         },
