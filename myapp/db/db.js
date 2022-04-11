@@ -1,10 +1,10 @@
 const data = {
     usuario: {
-        email: 'mwilson@udesa.edu.ar',
-        usuario: 'marcoswilson1',
+        email: 'nrjfnjr1udesa.edu.ar',
+        usuario: 'nrjfnjr1',
         fecha_de_nacimiento: '10/05/2002',
         nro_de_documento: '448380209', 
-        foto_de_perfil: '',
+        foto_de_perfil: '/images/users/fotodepp.jpeg',
         contrasenia: '123456789',
         },
 
@@ -74,6 +74,6 @@ productos: [{
 comentarios:  [{
     nombre_de_usuario: 'vugugiho',
     texto_del_comentario: 'uvrjxdeo',
-    imagen_de_perfil: '',
+    imagen_de_perfil: '/images/users/fotodepp.jpeg',
 }]
 }
