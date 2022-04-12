@@ -14,7 +14,7 @@
 		<div class="d-flex align-items-center">
 			
 			
-			<h2 class="products-title"> <%= auto.Nombre_del_producto %>  </h2> 
+			<h2 class="products-title"> <%= auto.fechaDelProducto %>  </h2> 
 
 			
 		
@@ -38,11 +38,11 @@
 						<% for( let i = 0; i < lista.length; i++ ) { %>						
 						
 						<article>
-							<img src="<%= lista[i].imagen_de_perfil %> " alt="">
+							<img src="<%= lista[i].imagenDePerfil %> " alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/profiles"><%= lista[i].nombre_de_usuario %> </a> </strong>
-								 <%= lista[i].texto_del_comentario %> </p>
+								<strong> <a href="/profiles"><%= lista[i].nombreDeUsuario %> </a> </strong>
+								 <%= lista[i].textoDelComentario %> </p>
 							</div>
 						</article>
 						<% } %>
