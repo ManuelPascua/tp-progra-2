@@ -72,9 +72,9 @@ const data = {
 
 
     comentarios:  [{
-        nombreDeUsuario: 'Mateo',
-        textoDelComentario: 'Muy buen disenio',
-        imagenDePerfil: '/images/users/fotodepp.jpeg',
+        nombre_de_usuario: 'Carolina ',
+        texto_del_comentario: 'Muy buen disenio',
+        imagen_de_perfil: '/images/users/fotodepp.jpeg',
         },
         {
         nombreDeUsuario: 'Julio',
