@@ -72,7 +72,7 @@ const data = {
 
 
     comentarios:  [{
-        nombre_de_usuario: 'Mateo',
+        nombre_de_usuario: 'Carolina ',
         texto_del_comentario: 'Muy buen disenio',
         imagen_de_perfil: '/images/users/fotodepp.jpeg',
         },
