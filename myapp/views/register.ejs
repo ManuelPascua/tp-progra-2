@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-	<%- include('./partials/head') %> 
+<%- include('./partials/head') %>
+	<link rel="stylesheet" href="/stylesheets/register.css">
+
+	<body>
+
+		<%- include('./partials/header') %>
+
+			<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+					</div>
+					<!-- Show the "ultimos" products -->
+					<form method="get">
+						<h1>Registrate</h1>
+						<div class="inset">
+							<p>
+								<label for="email"> CORREO ELECTRONICO</label>
+								<input type="text" name="email" id="email">
+							</p>
+							<p>
+								<label for="usuario">USUARIO</label>
+								<input type="user" name="usuario" id="usuario">
+							</p>
+							<p>
+								<label for="start"> FECHA DE NACIMIENTO</label>
+								<input type="date" id="start" name="trip-start" value="2022-07-16" min="1966-01-01"
+									max="2022-12-31">
+							</p>
+							<p>
+								<label for=¨nroDeDocumento¨> DNI</label>
+								<input type="number" name=¨nroDeDocumento¨ id="nroDeDocumento" />
+							</p>
+							<p>
+								<label for="fotoDePerfil">FOTO DE PERFIL</label>
+								<input type="file" />
+							</p>
+							<p>
+								<label for="contrasenia">CONTRASEÑA</label>
+								<input type="password" name="contrasenia" id="contrasenia">
+							</p>
+							<p>
+								<input type="checkbox" name="remember" id="remember">
+								<label for="remember">Recordar usuario</label>
+							</p>
+						</div>
+						<p class="p-container">
+							<input type="submit" name="go" id="go" value="Log in">
+						</p>
+					</form>
 
 
-<body>
-
-	<%- include('./partials/header') %> 
-
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-			</div>
-			<!-- Show the "ultimos" products -->
-			<form method="get">
-				<h1>Registrate</h1>
-				<div class="inset">
-				<p>
-				  <label for="email"> CORREO ELECTRONICO</label>
-				  <input type="text" name="email" id="email">
-				</p>   
-					<p>
-				  <label for="user">USUARIO</label>
-				  <input type="user" name="user" id="user">
-				</p>
-				<p>
-				  <label for="password">CONTRASEÑA</label>
-				  <input type="password" name="password" id="password">
-				</p>
-				  <p>
-					<label for= ¨dni¨> DNI</label>
-				  <input type="number" name=¨dni¨/>
-				   </p>
-					   <p>
-			   <label for="start"> FECHA DE NACIMIENTO</label>
-			  <input type="date" id="start" name="trip-start"
-					 value="2022-07-16"
-					 min="1966-01-01" max="2022-12-31">
-				</p>
-				<p>
-				  <input type="checkbox" name="remember" id="remember">
-				  <label for="remember">Recordar usuario</label>
-				</p>
-				</div>
-				<p class="p-container">
-				  <input type="submit" name="go" id="go" value="Log in">
-				</p>
-			  </form>
-
-
-			  <%- include('./partials/footer') %> 
-</body>
+					<%- include('./partials/footer') %>
+	</body>
 
 
 </html>
