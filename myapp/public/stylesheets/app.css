@@ -4,13 +4,9 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+
   --dark-blue: #03264C;
-  --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
-  --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --base-font-family: 'arial', sans-serif
 }
 
 
@@ -29,7 +25,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: var(--dark-blue);
 }
 
 ul,
@@ -68,7 +64,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+
 }
 
 .main-header_home-link,
