@@ -28,7 +28,9 @@ const products= {
     },
     
     productAdd: function(req,res){
-        return res.render('product-add')
+        return res.render('product-add',{
+            profile: data.usuario
+        })
     },
     
 }
