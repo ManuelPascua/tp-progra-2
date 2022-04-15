@@ -20,6 +20,7 @@ const products= {
             return res.render('products',{
                 lista:dataController.comentarios,
                 auto: autosPorMarca[0],
+                profile:data.usuario
                 
             })
         }
