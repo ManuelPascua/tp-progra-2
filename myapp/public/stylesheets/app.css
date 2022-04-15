@@ -29,7 +29,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: black;
 }
 
 ul,
@@ -42,7 +42,7 @@ ol {
 a {
   display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 figure {
@@ -68,7 +68,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color:  black;
 }
 
 .main-header_home-link,
@@ -112,8 +112,8 @@ hr {
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
-  background-color: var(--dark-blue);
-  color: #ffffff;
+  background-color: white;
+  color: black;
   font-size: 1.5em;
   border: none;
   border-radius: 4px;
@@ -171,7 +171,7 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: white;
 }
 
 .product-box {
@@ -481,7 +481,7 @@ textarea.form-input {
 @media (min-width: 768px) {
   .main-header_credit-link {
     margin-top: 0;
-    text-align: right;
+    text-align: right;;
   }
 
   .banner {
