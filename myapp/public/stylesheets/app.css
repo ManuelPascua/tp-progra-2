@@ -57,8 +57,10 @@ textarea {
 }
 
 hr {
-  border: none;
   border-bottom: solid 1px var(--light-gray);
+  height: 3px;
+  background-color: white;
+  width: 100%;
 }
 
 
@@ -121,13 +123,14 @@ hr {
 }
 
 .main-navbar {
-  margin-top: 20px;
+  margin-top: -18px;
   display: none;
 }
 
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .logout{
@@ -163,6 +166,16 @@ hr {
 
 
 /*====== Products ======*/
+.registro {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #858080b2;
+}
+
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -482,10 +495,11 @@ textarea.form-input {
   .main-header_credit-link {
     margin-top: 0;
     text-align: right;;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
   .banner {
-    height: 320px;
+    height: 200px;
   }
 
   .btn-toggle-navbar {
