@@ -20,7 +20,7 @@ const products= {
             return res.render('products',{
                 lista:dataController.comentarios,
                 auto: autosPorMarca[0],
-                profile:data.usuario
+                profile:dataController.usuario,
                 
             })
         }
@@ -29,7 +29,7 @@ const products= {
     
     productAdd: function(req,res){
         return res.render('product-add',{
-            profile: data.usuario
+            profile: dataController.usuario
         })
     },
     
