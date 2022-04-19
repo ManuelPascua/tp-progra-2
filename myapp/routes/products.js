@@ -1,11 +1,11 @@
 const expres=require('express');
 const router=expres.Router();
 
-const mainController=require('../controllers/productsController')
+const productsController=require('../controllers/productsController')
 
 
-router.get('/id/:id',mainController.buscarPorMarca);
-router.get('/product-add',mainController.productAdd);
+router.get('/id/:id',productsController.buscarPorMarca);
+router.get('/product-add',productsController.productAdd);
 
 
 module.exports = router;

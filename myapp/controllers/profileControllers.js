@@ -1,4 +1,4 @@
-const { usuario } = require('../db/db');
+
 const dataController = require('../db/db');
 
 const profiles= {
@@ -9,7 +9,9 @@ const profiles= {
         })
     }, 
     edit: function (req,res) {
-        return res.render('profile-edit')
+        return res.render('profile-edit',{
+            profile: dataController.usuario
+        })
     },
     
 }

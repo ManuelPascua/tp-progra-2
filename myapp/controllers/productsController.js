@@ -1,5 +1,5 @@
+
 const data = require('../db/db');
-const dataController = require('../db/db');
 
 
 const products= {
@@ -7,20 +7,20 @@ const products= {
     buscarPorMarca:function(req,res){
 
         
-        const autosPorMarca=[]
-        const marcaBuscada=req.params.id
+        const autosPorId=[]
+        const idBuscado=req.params.id
         for (let i = 0; i < data.productos.length; i++) {
-            if (marcaBuscada == data.productos[i].id) {
-                autosPorMarca.push(data.productos[i])
+            if (idBuscado == data.productos[i].id) {
+                autosPorId.push(data.productos[i])
                 
             }
             
         }
-        if (autosPorMarca.length>0) {
+        if (autosPorId.length>0) {
             return res.render('products',{
-                lista:dataController.comentarios,
-                auto: autosPorMarca[0],
-                profile:dataController.usuario,
+                lista:data.comentarios,
+                auto: autosPorId[0],
+                profile:data.usuario,
                 
             })
         }
@@ -29,7 +29,7 @@ const products= {
     
     productAdd: function(req,res){
         return res.render('product-add',{
-            profile: dataController.usuario
+            profile: data.usuario
         })
     },
     
