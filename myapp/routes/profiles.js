@@ -1,10 +1,10 @@
 const expres=require('express');
 const router=expres.Router();
 
-const mainController=require('../controllers/profileControllers')
+const profileController=require('../controllers/profileControllers')
 
-router.get('/',mainController.index);
-router.get('/edit',mainController.edit);
+router.get('/',profileController.index);
+router.get('/edit',profileController.edit);
 
 
 module.exports = router;
