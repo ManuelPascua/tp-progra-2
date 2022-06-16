@@ -1,6 +1,6 @@
 module.exports= (sequelize, dataType) =>{
 
-    let alias = "Users";
+    let alias = "User";
 
     let cols = {
         
@@ -46,13 +46,13 @@ module.exports= (sequelize, dataType) =>{
             type: dataType.DATE,
         },
 
-        create_at: {
+        created_at: {
             allowNule: false,
             type: dataType.DATE,
             field: "created_at"
         },
 
-        update_at: {
+        updated_at: {
             allowNule: false,
             type: dataType.DATE,
             field: "updated_at"
@@ -62,25 +62,26 @@ module.exports= (sequelize, dataType) =>{
     }
     let config = {
         tableName:"users", 
-        timestamps: true,
+        timestamps: false,
 
     };
 
-    Usuario.associate = (db) => {
-        Usuario.hasMany(db.Product, { // usuario tiene muchos productos
+    
+
+    const User=sequelize.define(alias, cols, config);
+    // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
+    User.associate = (db) => {
+        User.hasMany(db.Product, { // usuario tiene muchos productos
             as: "productos",
-            foreignKey: "users_id"
+            foreignKey: "user_id"
         });
-        Usuario.hasMany(db.Comment, { // usuario hace muchos comentarios (a su vez, en muchos productos)
+        User.hasMany(db.Comment, { // usuario hace muchos comentarios (a su vez, en muchos productos)
             as: "comentarios",
-            foreignKey: "users_id"
+            foreignKey: "user_id"
         });
 
     }
 
-    const Usuario=sequelize.define(alias, cols, config);
-    // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
-
-    return Usuario;
+    return User;
 
 }    

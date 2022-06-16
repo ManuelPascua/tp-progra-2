@@ -14,7 +14,7 @@
 		<div class="d-flex align-items-center">
 			
 			
-			<h2 class="products-title"> <%= auto.nombreDelProducto %>  </h2> 
+			<h2 class="products-title"> <%= producto.name %>  </h2> 
 
 			
 		
@@ -28,7 +28,7 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= auto.imagen %> " alt="" class="product-detail-img">
+					<img src="<%= producto.nombre %> " alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= auto.descripcion %> 
 						</p>
@@ -38,11 +38,11 @@
 						<% for( let i = 0; i < lista.length; i++ ) { %>						
 						
 						<article>
-							<img src="<%= lista[i].imagenDePerfil %> " alt="">
+							<img src="<%= lista[i].foto %> " alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/profiles"><%= lista[i].nombreDeUsuario %> </a> </strong>
-								 <%= lista[i].textoDelComentario %> </p>
+								<strong> <a href="/profiles"><%= lista[i].name %> </a> </strong>
+								 <%= lista[i].comment %> </p>
 							</div>
 						</article>
 						<% } %>

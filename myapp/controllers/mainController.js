@@ -1,11 +1,24 @@
-const data = require('../db/db')
-const dataController = require('../db/db')
+const db = require('../database/models')
 
 const main={
     index: function(req,res){
-        return res.render('index', {
-            lista : dataController.productos
+        db.Product.findAll({
+            
         })
+            .then(function(Products){
+                res.render('index',{
+                    lista:Products
+                })
+
+            })
+
+
+
+
+
+        // return res.render('index', {
+        //     lista : dataController.productos
+        // })
 
             
     },

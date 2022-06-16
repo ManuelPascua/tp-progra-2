@@ -31,21 +31,25 @@ module.exports= (sequelize, dataType) =>{
             allowNule: false
         },
         
-        create_at: {
+        created_at: {
             allowNule: false,
             type: dataType.DATE,
         },
-        update_at: {
+        updated_at: {
             allowNule: false,
             type: dataType.DATE,
         },
     }
     let config = {
         tableName:"products", 
-        timestamps: true,
+        timestamps: false,
 
     }; 
     
+    
+
+    const Product=sequelize.define(alias, cols, config);
+    // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
     Product.associate = (db) => {
         Product.belongsTo(db.User, { //Product pertenece a User
             as: "usuario",
@@ -57,9 +61,6 @@ module.exports= (sequelize, dataType) =>{
         });
         //Cada vez que hacemos un .belongsTo o .hasMany en un modelo, es necesario hacer su contraparte en el otro modelo correspondiente
     }
-
-    const Product=sequelize.define(alias, cols, config);
-    // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
 
     return Product;
 }

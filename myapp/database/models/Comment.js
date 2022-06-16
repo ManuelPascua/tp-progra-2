@@ -15,13 +15,13 @@ module.exports= (sequelize, dataType) =>{
             allowNule: false,
             type: dataType.STRING,
         },
-        create_at: {
+        created_at: {
             allowNule: false,
             type: dataType.DATE,
             field: "created_at"
         },
 
-        update_at: {
+        updated_at: {
             allowNule: false,
             type: dataType.DATE,
             field: "updated_at"
@@ -31,10 +31,14 @@ module.exports= (sequelize, dataType) =>{
     }
     let config = {
         tableName:"users", 
-        timestamps: true,
+        timestamps: false,
 
     };
 
+    
+
+    const Comment=sequelize.define(alias, cols, config);
+    // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
     Comment.associate = (db) => {
         Comment.belongsTo(db.Product, {// comentario pertenece al producto
             as: "producto",
@@ -46,9 +50,6 @@ module.exports= (sequelize, dataType) =>{
         });
 
     }
-
-    const Comment=sequelize.define(alias, cols, config);
-    // alias: identifica al modelo --  cols: lo que contiene la tabla  --  config: nombre de la tabla
 
     return Comment;
 }

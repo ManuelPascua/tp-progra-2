@@ -3,9 +3,10 @@ module.exports=
   "development":{
     "username": "root",
     "password": "root",
-    "database": "auto_garage_db",
+    "database": "auto_garage_2_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port":"8889"
   },
   "test": {
     "username": "root",
