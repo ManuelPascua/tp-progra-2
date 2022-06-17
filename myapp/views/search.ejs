@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include('./partials/head') %> 
+<body>
+	<%- include('./partials/headerLogueado') %> 
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<diav class="col-12">
+				<h2 class="products-title">Resultados de búsqueda</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<% for( let i = 0; i < productos.length; i++ ) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="product/id/<%= productos[i].id %> ">
+							<figure class="product-box_image">
+								<img src="/images/products/<%= productos[i].foto %> " alt="<%= productos[i].model %> ">
+							</figure>
+							<!-- <article class="product-box_data">
+								<h2><%= productos[i].model %></h2>
+								<p><%= productos[i].marca %></p>
+								<p>Comentarios: <%= productos[i].comentarios.length %> </p>
+								<p> <a href="/profile/id/<%= productos[i].usuario.id %>">Creado por:
+										<%= productos[i].usuario.name %> <%= productos[i].usuario.last_name %></a>
+								</p>
+							</article> -->
+						</a>
+					</section>
+				</div>
+				<% } %>
+
+	<%- include('./partials/footer') %> 
+</body>
+
+</html>
