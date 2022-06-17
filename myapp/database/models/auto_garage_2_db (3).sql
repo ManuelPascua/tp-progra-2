@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 16-06-2022 a las 14:30:50
+-- Tiempo de generación: 17-06-2022 a las 21:10:12
 -- Versión del servidor: 5.7.34
 -- Versión de PHP: 7.4.21
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Comments` (
   `id` int(11) NOT NULL,
-  `Comment` varchar(250) NOT NULL,
+  `comment` varchar(250) NOT NULL,
   `product_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -40,7 +40,7 @@ CREATE TABLE `Comments` (
 -- Volcado de datos para la tabla `Comments`
 --
 
-INSERT INTO `Comments` (`id`, `Comment`, `product_id`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `Comments` (`id`, `comment`, `product_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'saludos', 8, 6, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (2, 'muy bueno', 5, 2, '2022-06-06 03:00:00', '2022-06-15 17:06:42'),
 (5, 'excelente', 9, 6, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
@@ -94,7 +94,7 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(250) NOT NULL,
   `email` varchar(200) NOT NULL,
-  ` date_of_birth` date NOT NULL,
+  `date_of_birth` date NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -103,7 +103,7 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `lastname`, `foto_perfil`, `username`, `password`, `email`, ` date_of_birth`, `created_at`, `updated_at`) VALUES
+INSERT INTO `users` (`id`, `name`, `lastname`, `foto_perfil`, `username`, `password`, `email`, `date_of_birth`, `created_at`, `updated_at`) VALUES
 (1, 'brian', 'gomez', 'asdasd', 'briang', '123123123', 'bg@dh.com', '2022-06-06', '2022-06-06 03:00:00', '2022-06-13 14:55:17'),
 (2, 'carlos', 'as', 'asdasd', 'asdasd', 'asdadasd', 'cg@as.com', '2022-06-06', '2022-06-06 03:00:00', '2022-06-13 14:56:21'),
 (5, 'marcos', 'wilson', 'dshcsj', 'mwilson', 'uhsjinaij', 'mw@dh.com', '2002-10-24', '2022-06-06 03:00:00', '2022-06-13 14:56:21'),
