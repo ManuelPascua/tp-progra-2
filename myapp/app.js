@@ -10,7 +10,7 @@ const productsRouter = require('./routes/products');
 const profilesRouter = require('./routes/profiles');
 const loginRouter = require('./routes/login')
 const registerRouter= require('./routes/register');
-const { register } = require('./controllers/mainController');
+
 
 
 var app = express();

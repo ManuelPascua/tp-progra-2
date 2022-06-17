@@ -2,7 +2,10 @@ const db= require('../database/models')
 
 
 const register={
-    createuser:function(req,res){
-
+    createUser:function(req,res){
+        db.User.findBy()
+        return res.render('register')
     }
 }
+
+module.exports=register
