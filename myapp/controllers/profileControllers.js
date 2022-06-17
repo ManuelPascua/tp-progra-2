@@ -1,16 +1,21 @@
-
-const dataController = require('../db/db');
+const db= require('../database/models')
 
 const profiles= {
     index: function (req,res){
-        return res.render('profile',{
-            lista: dataController.productos,
-            profile: dataController.usuario
-        })
+        db.User. findone()
+
+
+
+
+
+        // return res.render('profile',{
+        //     lista: db.Porducts,
+        //     profile: db.User
+        // })
     }, 
     edit: function (req,res) {
         return res.render('profile-edit',{
-            profile: dataController.usuario
+            profile: db.User
         })
     },
     

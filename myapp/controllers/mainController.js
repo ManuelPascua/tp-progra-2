@@ -3,7 +3,9 @@ const Op= db.Sequelize.Op;
 const main={
     index: function(req,res){
         db.Product.findAll({
-            
+            order:[
+                ['model','ASC']
+            ]
         })
             .then(function(Products){
                 res.render('index',{
@@ -28,7 +30,7 @@ const main={
     login: function(req,res){
         return res.render('login')
     },
-    search: function(req,req){
+    search: function(req,res){
         db.Product.findAll({
             where:{
                 [Op.or]: [{
@@ -41,22 +43,35 @@ const main={
                         [Op.like]:"%" + req.query.search + "%"
                     }
                 }]
-            }
+            },
+            include: [{
+                association: "comentarios",
+                include: {
+                    association: "usuario"
+                }
+            }, {
+                association: "usuario"
+            }],
+            order: [
+                ['comentarios', 'created_at', 'desc']
+            ],
+                
+            
 
         })
         .then(productos => {
-            console.log(productos)
-            if (productos == []) {
-                res.render('search', {
+           db.User.findAll()
+                .then(User=>
+                    {res.render('search', {
                     productos: productos,
-                })
-            }
-            res.render('search', {
-                productos: productos,
-            })
+                    User: User[0]
+    
+                })})
+            
         })
-
+        
     }
+    
     
 
 }
