@@ -5,43 +5,33 @@ const db = require('../database/models');
 const products= {
   
     buscarPorID:function(req,res){
-
-        db.Product.findByPk(req.params.id)
-        .then(function(producto){
-
-            return res.render('product', {
-                producto: producto
-            });
-
-        })
-        
-
-
-
-
-
-
-
-
-
-
-        // const autosPorId=[]
-        // const idBuscado=req.params.id
-        // for (let i = 0; i < data.productos.length; i++) {
-        //     if (idBuscado == data.productos[i].id) {
-        //         autosPorId.push(data.productos[i])
-                
-        //     }
-            
-        // }
-        // if (autosPorId.length>0) {
-        //     return res.render('products',{
-        //         lista:data.comentarios,
-        //         auto: autosPorId[0],
-        //         profile:data.usuario,
-                
-        //     })
-        // }
+        db.Product.findByPk(req.params.id, {  //params es de /:id (parametro) para un valor ene especifico
+            include: [{
+                association: "comentarios",
+                include: {
+                    association: "usuario"
+                }
+            }, {
+                association: "usuario"
+            }],
+            order: [
+                ['comentarios', 'created_at', 'desc']
+            ],
+        }).then(producto => {
+           
+            db.User.findAll()
+            .then(User=>{
+                db.Comment.findAll()
+                .then(Comment=>{
+                    res.render('products',{
+                        User:User[0],
+                        producto:producto,
+                        lista:Comment
+                    })     
+ 
+                })
+            })
+        })  
 
     },
     
