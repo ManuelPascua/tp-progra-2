@@ -13,7 +13,7 @@
 			<% for( let i = 0; i < productos.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="product/id/<%= productos[i].id %> ">
+						<a href="products/id/<%= productos[i].id %> ">
 							<figure class="product-box_image">
 								<img src="<%= productos[i].foto %> " alt="<%= productos[i].model %> ">
 							</figure>
@@ -22,7 +22,7 @@
 								<p><%= productos[i].marca %></p>
 								<p>Comentarios: <%= productos[i].comentarios.length %> </p>
 								<p> <a href="/profile/id/<%= productos[i].usuario.id %>">Creado por:
-										<%= productos[i].usuario.name %> <%= productos[i].usuario.last_name %></a>
+										<%= productos[i].user_id.name %> <%= productos[i].user_id.last_name %></a>
 								</p>
 							</article>
 						</a>
