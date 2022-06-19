@@ -28,7 +28,7 @@ const register = {
                                 if (!resultado) {
                                     db.User.create({
                                         name: req.body.nombre,
-                                        last_name: req.body.apellido,  //body es por POST - nombreInput
+                                        last_name: req.body.apellido, 
                                         email: req.body.email,
                                         nacimiento: req.body.fecha,
                                         username: req.body.usuario,
@@ -103,4 +103,3 @@ const register = {
 }
 
 module.exports=register
-
