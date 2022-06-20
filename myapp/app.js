@@ -25,7 +25,37 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const session = require('express-session');
+// secret identifica session de los demas. Mensaje costumizable
+app.use(session({
+  secret: "login",
+  resave: false,
+  saveUninitialized: true
+}));
+// app.use(function (req, res, next) {
+//   if (req.cookies.userId && !req.session.usuario) {
+//     db.User.findByPk(req.cookies.userId).then(resultado => {
+//       req.session.usuario = resultado
+//       return next();
+//     });
+//   } else {
+//     return next();
+//   }
+// });
+// app.use(function (req, res, next) {   // manda informacion a todas las vistas (locals)
+//   if (req.session.usuario) {
+//     res.locals = {
+//       logueado: true,
+//       miUsuario: req.session.usuario    //Muestra el nombre guardado 
+//     }
+//   } else {
+//     res.locals = {
+//       logueado: false
+//     }
+//   }
 
+//   return next();
+// });
 app.use('/', mainRouter);
 
 app.use('/products', productsRouter);
@@ -37,6 +67,8 @@ app.use('/register', registerRouter)
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
 
 // error handler
 app.use(function(err, req, res, next) {

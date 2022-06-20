@@ -2,7 +2,7 @@ const expres=require('express');
 const router=expres.Router();
 const registerController=require('../controllers/registerController')
 
-router.get('/',registerController.createUser);
+// router.get('/',registerController.createUser);
 
 // Requiero modulos de multer y path * /
 const multer = require('multer')

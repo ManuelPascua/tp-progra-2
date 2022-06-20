@@ -14,7 +14,7 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 					<div class="registro">
-					<form method="get">
+					<form method="POST">
 						<h1>Registrate</h1>
 						<div class="inset">
 							<p>
@@ -23,12 +23,16 @@
 							</p>
 							<p>
 								<label for="lastname">APELLIDO</label>
-								<input type="user" name="usuario" id="usuario">
+								<input type="text" name="apellido" id="apellido">
 							</p>
 							<p>
 								<label for="date_of_birth"> FECHA DE NACIMIENTO</label>
-								<input type="date" id="start" name="trip-start" value="2022-07-16" min="1966-01-01"
+								<input type="date" id="fecha" name="fecha" value="2022-07-16" min="1966-01-01"
 									max="2022-12-31">
+							</p>
+							<p>
+								<label for="usuario"> Nombre de Usuario</label>
+								<input type="text" name="usuario" id="usuario" />
 							</p>
 							<p>
 								<label for=¨email¨> EMAIL</label>
@@ -40,11 +44,11 @@
 							</p>
 							<p>
 								<label for="confirmar contrasenia">CONFIRMAR CONTRASEÑA</label>
-								<input type="password" name="contrasenia" id="contrasenia">
+								<input type="password" name="confirContra" id="contrasenia">
 							</p>
 							<p>
-								<label for="fotoDePerfil">FOTO DE PERFIL</label>
-								<input type="file" />
+								<label for="fileName">FOTO DE PERFIL</label>
+								<input name="fileName" type="file" />
 							</p>
 							
 							<p>
@@ -53,7 +57,7 @@
 							</p>
 						</div>
 						<p class="p-container">
-							<input type="submit" name="go" id="go" value="Log in">
+							<input type="submit" name="go" id="go" value="Registrarse">
 						</p>
 					</form>
 				</div>

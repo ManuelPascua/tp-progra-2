@@ -14,25 +14,26 @@ const register = {
     },
 
     createUser: (req, res) => {
-        if (req.body.nombre && req.body.apellido && req.body.email && req.body.fecha && req.body.usuario && req.body.contraseña) {
-            if (req.body.contraseña.length >= 4) {
-                if (req.body.contraseña == req.body.confirContra) {
+        console.log(req.body)
+        if (req.body.nombre && req.body.apellido && req.body.usuario && req.body.email && req.body.fecha  && req.body.contrasenia) {
+            if (req.body.contrasenia.length >= 4) {
+                if (req.body.contrasenia == req.body.confirContra) {
                     if (req.file) {
-                        let passEncriptada = bcrypt.hashSync(req.body.contraseña);
+                        let passEncriptada = bcrypt.hashSync(req.body.contrasenia);
                         db.User.findOne({
                                 where: {
-                                    username: req.body.usuario
+                                    usuario: req.body.usuario
                                 }
                             })
                             .then(resultado => {
                                 if (!resultado) {
                                     db.User.create({
                                         name: req.body.nombre,
-                                        last_name: req.body.apellido, 
+                                        lastname: req.body.apellido, 
                                         email: req.body.email,
-                                        nacimiento: req.body.fecha,
+                                        date_of_birth: req.body.fecha,
                                         username: req.body.usuario,
-                                        cover: req.file.filename,
+                                        foto_perfil: req.file.filename,
                                         password: passEncriptada,
                                     }).then(user => {
                                         req.session.usuario = user
@@ -41,7 +42,7 @@ const register = {
                                             maxAge: 1000 * 60 * 5
                                         });
 
-                                        res.redirect('/');
+                                        return res.render('/profile',{profile:req.session.usuario});
                                     });
                                 } else {
                                     res.render('register', {
@@ -52,7 +53,7 @@ const register = {
 
                     } else {
 
-                        let passEncriptada = bcrypt.hashSync(req.body.contraseña);
+                        let passEncriptada = bcrypt.hashSync(req.body.contrasenia);
                         db.User.findOne({
                                 where: {
                                     username: req.body.usuario
@@ -62,11 +63,11 @@ const register = {
                                 if (!resultado) {
                                     db.User.create({
                                         name: req.body.nombre,
-                                        last_name: req.body.apellido,
+                                        lastname: req.body.apellido, 
                                         email: req.body.email,
-                                        nacimiento: req.body.fecha,
+                                        date_of_birth: req.body.fecha,
                                         username: req.body.usuario,
-                                        cover: 'fotodefault.jpeg',
+                                        foto_perfil: 'fotodefault.jpg',
                                         password: passEncriptada,
                                     }).then(user => {
                                         req.session.usuario = user

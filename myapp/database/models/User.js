@@ -6,54 +6,55 @@ module.exports= (sequelize, dataType) =>{
         
         id: {
             autoIncrement: true,
-            allowNule: false,
+            allowNull: false,
             primaryKey: true,
             type: dataType.INTEGER,
         },
 
         name: {
-            allowNule: false,
+            allowNull: false,
             type: dataType.STRING,
         },
 
         lastname: {
-            allowNule: false,
+            allowNull: false,
             type: dataType.STRING,
         },
 
         username:{
-            allowNule: false,
+            allowNull: false,
             type: dataType.STRING
         },
 
         foto_perfil:{
-            allowNule: false,
+            allowNull: true,
             type: dataType.STRING
         },
 
         password :{
-            allowNule: false,
+            allowNull: false,
             type: dataType.STRING,
         },
 
         email:{
-            allowNule: false,
+            allowNull: false,
             type: dataType.STRING,
         },
 
         date_of_birth: {
-            allowNule: true,
+            allowNull: true,
             type: dataType.DATE,
         },
 
         created_at: {
-            allowNule: false,
+            allowNull: false,
             type: dataType.DATE,
-            field: "created_at"
+            field: "created_at",
+            defaultValue: sequelize.literal('NOW()')
         },
 
         updated_at: {
-            allowNule: false,
+            allowNull: true,
             type: dataType.DATE,
             field: "updated_at"
 
