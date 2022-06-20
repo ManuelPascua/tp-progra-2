@@ -7,7 +7,9 @@ router.get('/',mainController.index);
 
 router.get('/login',mainController.login);
 
-router.get('/search', mainController.search)
+router.get('/search', mainController.search);
+
+router.post('/logout', mainController.logout)
 
 
 

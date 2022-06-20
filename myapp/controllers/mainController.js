@@ -68,6 +68,11 @@ const main={
             
         })
         
+    },
+    logout:function(res,req){
+        req.session.destroy()
+        res.clearCookie('userId')
+        res.redirect('/')
     }
     
     
