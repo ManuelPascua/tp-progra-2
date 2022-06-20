@@ -59,6 +59,11 @@
 						<p class="p-container">
 							<input type="submit" name="go" id="go" value="Registrarse">
 						</p>
+
+						<% if (error) { %>
+							<h4 style="color: red;"> <%= error %> </h4>
+						<% } %>
+							
 					</form>
 				</div>
 
