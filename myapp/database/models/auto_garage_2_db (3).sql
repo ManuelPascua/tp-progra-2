@@ -42,7 +42,7 @@ CREATE TABLE `products` (
 
 -- Volcado de datos para la tabla `products`
 INSERT INTO `products` (`id`, `model`, `marca`, `year`, `price`, `foto`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Giulia', 'Alfa Romeo', 2015, 20000, 'images/products/Alfa-romeo.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
+(1, 'Giulia', 'Alfa Romeo', 2015, 20000, '/images/products/Alfa-romeo.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (2, 'Serie 2', 'BMW', 2020, 40000, '/images/products/BMW.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (5, 'Tiggo 2', 'Chery', 2013, 8000, '/images/products/Chery.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (6, '4', 'DS', 2022, 40000, '/images/products/DS9.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
