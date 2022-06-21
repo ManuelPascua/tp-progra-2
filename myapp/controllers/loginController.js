@@ -41,7 +41,7 @@ const login= {
 
                     } else {
                         return res.render('login', {
-                            error: 'El nombre de usuario es incorrecto'
+                            error: 'El email ingresado es incorrecto'
                         })
                     }
                 })

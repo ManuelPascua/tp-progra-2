@@ -33,6 +33,9 @@
                   <label for="remember">Recordarme </label>
                 </p>
                 </div>
+                <% if (error) { %>
+                  <h4 style="color: red;"> <%= error %> </h4>
+                <% } %>
                 <p class="p-container">
                   <span>Olvidaste tu contraseña?</span>
                   <input type="submit" name="go" id="go" value="Log in">
