@@ -4,8 +4,8 @@ const bcrypt = require('bcryptjs')
 
 const login= {
     index: (req, res) => {
-        if (!req.session.email) {
-            res.render('login', {
+        if (!req.session.usuario) {
+           return res.render('login', {
                 error: null,
                 logueado:false
             })
@@ -32,7 +32,7 @@ const login= {
                                     maxAge: 1000 * 60 * 5
                                 });
                             }
-                            return res.redirect('/')
+                            return res.redirect('/');
                         } else {
                             return res.render('login', {
                                 error: 'La contraseña es incorrecta'

@@ -26,7 +26,7 @@ const main={
     },
     
     login: function(req,res){
-        return res.render('login')
+        return res.render('login',{error:null})
     },
     search: function(req,res){
         db.Product.findAll({
@@ -69,10 +69,10 @@ const main={
         })
         
     },
-    logout:function(res,req){
+    logout:function(req,res){
         req.session.destroy()
         res.clearCookie('userId')
-        res.redirect('/')
+        return res.redirect('/')
     }
     
     

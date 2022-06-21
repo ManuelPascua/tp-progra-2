@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 
 const profiles = {
     index: (req, res) => {
-        db.usuario.findByPk(req.params.id, {
+        db.User.findByPk(req.params.id, {
             include: [{
                     association: 'productos',
                     include: [{
@@ -15,15 +15,17 @@ const profiles = {
                     association: 'comentarios'
                 }
             ]
-        }).then(resultado => {
-           if(!resultado){
+        }).then(usuario => {
+           if(!usuario){
                res.redirect('/')
            }
-            if(req.session.usuario && req.session.usuario.id == resultado.id){
-                req.session.usuario = resultado //updatea la session
+            if(req.session.usuario && req.session.usuario.id == usuario.id){
+                req.session.usuario = usuario //updatea la session
             }
             res.render('profile', {
-                usuario: resultado
+                profile: usuario,
+                lista: usuario.productos,
+                comentarios: usuario.comentarios
             })
         })
         /*db.Product.findAll({

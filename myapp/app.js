@@ -44,10 +44,10 @@ app.use(function (req, res, next) {
   }
 });
 app.use(function (req, res, next) {   // manda informacion a todas las vistas (locals)
-  if (req.session.email) {
+  if (req.session.usuario) {
     res.locals = {
-      logueado: req.session.email !== null && req.session.email !== undefined,
-      miUsuario: req.session.email    //Muestra el nombre guardado 
+      logueado: req.session.usuario !== null && req.session.usuario !== undefined,
+      miUsuario: req.session.usuario    //Muestra el nombre guardado 
     }
   } else {
     res.locals = {
