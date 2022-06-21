@@ -3,22 +3,21 @@
 
 	<!-- /Head -->
     <%- include('./partials/head') %> 
-
-    <body>
+  
 	<!-- /Header -->
-    <% if (logueado) { %>
-      <%- include('./partials/headerLogueado')%>
-      <% } else { %>
-      <%- include('./partials/header')%>
-      <% } %>
-
+<body>
+  <% if (logueado) { %>
+    <%- include('./partials/headerLogueado')%>
+    <% } else { %>
+    <%- include('./partials/header')%>
+    <% } %>
     <!-- Novedades -->
     <div class="container products-wrapper">
         <div class="row">
     
             <!-- Show the "ultimos" products -->
         <div>
-            <form method="POST"> 
+            <form action="/login" method="POST"> 
                 <h1>Ingresa a tu cuenta</h1>
                 <div class="inset">
                 <p>

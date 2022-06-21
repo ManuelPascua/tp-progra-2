@@ -5,11 +5,11 @@ const bcrypt = require('bcryptjs');
 const register = {
     index: (req, res) => {
         if (!req.session.usuario) {
-            res.render('register', {
+            return res.render('register', {
                 error: null
             })
         } else {
-            res.redirect('/')
+            return res.redirect('/')
         }
     },
 
@@ -23,12 +23,12 @@ const register = {
                             let passEncriptada = bcrypt.hashSync(req.body.contrasenia);
                             db.User.findOne({
                                     where: {
-                                        usuario: req.body.usuario,
                                         email: req.body.email
                                     }
                                 })
                                 .then(resultado => {
-                                    if (!resultado) {
+                                    console.log('resulado',resultado)
+                                    if (resultado ==null)  {
                                         db.User.create({
                                             name: req.body.nombre,
                                             lastname: req.body.apellido, 
@@ -47,8 +47,8 @@ const register = {
                                             return res.render('/profile',{profile:req.session.usuario});
                                         });
                                     } else {
-                                        res.render('register', {
-                                            error: 'Ya existe este nombre de usuario'
+                                        return res.render('register', {
+                                            error: 'El email ya se encuentra registrado'
                                         })
                                     }
                                 })
@@ -58,12 +58,11 @@ const register = {
                             let passEncriptada = bcrypt.hashSync(req.body.contrasenia);
                             db.User.findOne({
                                     where: {
-                                        username: req.body.usuario,
                                         email: req.body.email
                                     }
                                 })
                                 .then(resultado => {
-                                    if (!resultado) {
+                                    if (resultado ==null) {
                                         db.User.create({
                                             name: req.body.nombre,
                                             lastname: req.body.apellido, 
@@ -78,29 +77,29 @@ const register = {
                                                 maxAge: 1000 * 60 * 5
                                             });
 
-                                            res.redirect('/');
+                                            return res.redirect('/');
                                         });
                                     } else {
-                                        res.render('register', {
-                                            error: 'Ya existe este nombre de usuario'
+                                        return res.render('register', {
+                                            error: 'Ya esta registrado el email'
                                         })
                                     }
                                 })
                         }
                     } else {
-                        res.render('register', {
+                        return res.render('register', {
                             error: 'Las contraseñas no coinciden'
                         })
                     }
                     
-                } else {
-                    res.render('register', {
+                } else { 
+                   return res.render('register', {
                         error: 'La contraseña tiene que tener mas de tres caracteres'
                     })
                 }
             
         } else { //va al primer if, si falta algun campo tira este error. en el front esta el required
-            res.render('register', {
+            return res.render('register', {
                 error: 'No puede haber campos vacios'
             })
         }
