@@ -62,7 +62,7 @@ const main={
                 .then(User=>
                     {res.render('search', {
                     productos: productos,
-                    User: User[0]
+                    User: User
     
                 })})
             
