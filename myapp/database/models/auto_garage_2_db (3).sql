@@ -45,11 +45,11 @@ INSERT INTO `products` (`id`, `model`, `marca`, `year`, `price`, `foto`, `user_i
 (1, 'Giulia', 'Alfa Romeo', 2015, 20000, '/images/products/Alfa-romeo.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (2, 'Serie 2', 'BMW', 2020, 40000, '/images/products/BMW.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (5, 'Tiggo 2', 'Chery', 2013, 8000, '/images/products/Chery.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
-(6, '4', 'DS', 2022, 40000, '/images/products/DS9.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
+(6, 'Serie 4', 'DS', 2022, 40000, '/images/products/DS9.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (7, 'Bronco Sport', 'Ford', 2019, 25000, '/images/products/Ford.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (8, 'Quattroporte', 'Maserati', 2021, 70000, '/images/products/Maserati.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
 (9, 'Sentra', 'Nissan', 2018, 20000, '/images/products/Nissan.jpeg', 1, '2022-06-06 03:00:00', '2022-06-06 03:00:00'),
-(40, 'Corola', 'Toyota', 2018, 10000, '/images/products/Toyota.jpeg', 1, '2022-06-06 00:00:00', '2022-06-06 00:00:00');
+(40, 'Corolla', 'Toyota', 2018, 10000, '/images/products/Toyota.jpeg', 1, '2022-06-06 00:00:00', '2022-06-06 00:00:00');
 
 
 -- Estructura de tabla para la tabla `users`
