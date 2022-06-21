@@ -12,7 +12,6 @@ const loginRouter = require('./routes/login')
 const registerRouter= require('./routes/register');
 
 
-
 var app = express();
 
 // view engine setup
@@ -85,3 +84,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+

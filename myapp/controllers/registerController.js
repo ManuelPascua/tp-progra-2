@@ -23,7 +23,8 @@ const register = {
                             let passEncriptada = bcrypt.hashSync(req.body.contrasenia);
                             db.User.findOne({
                                     where: {
-                                        usuario: req.body.usuario
+                                        usuario: req.body.usuario,
+                                        email: req.body.email
                                     }
                                 })
                                 .then(resultado => {
@@ -57,7 +58,8 @@ const register = {
                             let passEncriptada = bcrypt.hashSync(req.body.contrasenia);
                             db.User.findOne({
                                     where: {
-                                        username: req.body.usuario
+                                        username: req.body.usuario,
+                                        email: req.body.email
                                     }
                                 })
                                 .then(resultado => {
@@ -90,6 +92,7 @@ const register = {
                             error: 'Las contraseñas no coinciden'
                         })
                     }
+                    
                 } else {
                     res.render('register', {
                         error: 'La contraseña tiene que tener mas de tres caracteres'
