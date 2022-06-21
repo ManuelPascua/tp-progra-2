@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+const session = require('express-session');
 // secret identifica session de los demas. Mensaje costumizable
 app.use(session({
   secret: "login",
@@ -61,7 +61,6 @@ app.use(function (req, res, next) {   // manda informacion a todas las vistas (l
 
 
 app.use('/', mainRouter);
-
 app.use('/products', productsRouter);
 app.use('/profiles', profilesRouter);
 app.use('/login', loginRouter);
