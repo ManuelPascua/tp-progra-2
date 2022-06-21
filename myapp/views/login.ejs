@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
+	<!-- /Head -->
     <%- include('./partials/head') %> 
 
+    <body>
+	<!-- /Header -->
+    <% if (logueado) { %>
+      <%- include('./partials/headerLogueado')%>
+      <% } else { %>
+      <%- include('./partials/header')%>
+      <% } %>
 
-<body>
-        <%- include('./partials/header') %> 
     <!-- Novedades -->
     <div class="container products-wrapper">
         <div class="row">
