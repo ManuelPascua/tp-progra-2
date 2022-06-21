@@ -44,7 +44,7 @@ const register = {
                                                 maxAge: 1000 * 60 * 5
                                             });
 
-                                            return res.render('/profile',{profile:req.session.usuario});
+                                            return res.render('/profile',{profile:req.session.email});
                                         });
                                     } else {
                                         return res.render('register', {
