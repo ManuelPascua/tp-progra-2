@@ -22,10 +22,9 @@ var upload = multer({storage: storage})
 router.get('/id/:id',productsController.buscarPorID);
 router.get('/product-add',productsController.productAdd);
 router.post('/add', upload.single("imagen"),productsController.create);
-router.get('/edit/:id', productsController.edit);
-router.post('/edit',upload.single("portada"),productsController.update);
-router.post('/delete/:id',productsController .delete);
-router.post('/comment', productsController.comment)
+router.post('/edit',productsController.update);
+router.post('/delete/:id',productsController.delete);
+router.post('/comment', productsController.comment);
 
 
 module.exports = router;

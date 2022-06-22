@@ -119,27 +119,33 @@ const products= {
         if (!req.session.usuario || req.session.usuario.id != req.body.usuario_id) {
             res.redirect('/')
         }
-
-        db.Product.destroy({
+        let idProducto = req.params.id
+        db.Comment.destroy({
             where: {
-                id: req.params.id
+                id_producto: id_producto
             }
         }).then(() => {
-            return res.redirect('/')
+            db.Product.destroy({
+                where: {
+                    id: req.params.id
+                }
+            }).then(() => {
+                return res.redirect('/')
+            })
         })
+        
     },
 
     comment: (req, res) => {
         if (req.session.usuario) {
-            if (req.body.comment.length == 0) {
-                res.redirect('/product/id/' + req.body.id)
-            }
+            console.log(req.body)
+            
             db.Comment.create({
                 comment: req.body.comment,
-                products_id: req.body.id,
-                users_id: req.session.usuario.id
+                product_id: req.body.id,
+                user_id: req.session.usuario.id
             }).then(resultado => {
-                res.redirect('/product/id/' + req.body.id)
+                return res.redirect('/products/id/' + req.body.id)
             })
         } else 
             return res.redirect('/login')
