@@ -30,17 +30,7 @@ const profiles = {
                 })
             }
         })
-        /*db.Product.findAll({
-            include: [{
-                association: 'usuario'
-            }, {
-                association: 'comentarios'
-            }],
-        }).then(producto => {
-            res.render('profile', {
-                producto: producto
-            });
-        })*/
+
 
     },
     edit: (req, res) => {
