@@ -23,7 +23,7 @@ const products= {
                 db.Comment.findAll()
                 .then(Comment=>{
                     res.render('products',{
-                        User:User[0],
+                        User:User,
                         producto:producto,
                         lista:Comment
                     })     
