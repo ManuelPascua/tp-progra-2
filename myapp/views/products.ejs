@@ -65,8 +65,9 @@
 						<% } %>
 
 					</section>
-					<form class="form" action="/products/comment" method="POST" enctype="multipart/form-data">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form action="/products/comment" method="post">
+						<input type="hidden" id="id" name="id" value="<%=producto.id%>">
+						<input class="form-input" type="text" id="comment" name="comment" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 					<hr>

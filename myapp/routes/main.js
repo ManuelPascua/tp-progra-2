@@ -12,7 +12,4 @@ router.get('/search', mainController.search);
 router.post('/logout', mainController.logout)
 
 
-
-
-
 module.exports = router;

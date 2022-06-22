@@ -23,8 +23,8 @@ router.get('/id/:id',productsController.buscarPorID);
 router.get('/product-add',productsController.productAdd);
 router.post('/add', upload.single("imagen"),productsController.create);
 router.post('/edit',productsController.update);
-router.post('/delete/:id',productsController .delete);
-router.post('/comment', productsController.comment)
+router.post('/delete/:id',productsController.delete);
+router.post('/comment', productsController.comment);
 
 
 module.exports = router;

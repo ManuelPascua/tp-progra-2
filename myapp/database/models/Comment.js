@@ -15,6 +15,14 @@ module.exports= (sequelize, dataType) =>{
             allowNule: false,
             type: dataType.STRING,
         },
+        product_id: {
+            allowNule: false,
+            type: dataType.INTEGER,
+        },
+        user_id: {
+            allowNule: false,
+            type: dataType.INTEGER,
+        },
         created_at: {
             allowNule: false,
             type: dataType.DATE,
