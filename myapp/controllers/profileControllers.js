@@ -16,17 +16,16 @@ const profiles = {
                 }
             ]
         }).then(usuario => {
-           if(!usuario){
-               res.redirect('/')
-           }
-            if(req.session.usuario && req.session.usuario.id == usuario.id){
-                req.session.usuario = usuario //updatea la session
+            if(usuario){
+                if(req.session.usuario && req.session.usuario.id == usuario.id){
+                    req.session.usuario = usuario //updatea la session
+                }
+                res.render('profile', {
+                    profile: usuario,
+                    lista: usuario.productos,
+                    comentarios: usuario.comentarios
+                })
             }
-            res.render('profile', {
-                profile: usuario,
-                lista: usuario.productos,
-                comentarios: usuario.comentarios
-            })
         })
         /*db.Product.findAll({
             include: [{

@@ -1,0 +1,57 @@
+<!-- /Head -->
+<%- include('./partials/head')%>
+<!-- /Head -->
+
+<body>
+    <!-- /Header -->
+    <% if (logueado) { %>
+    <%- include('./partials/headerLogueado')%>
+    <% } else { %>
+    <%- include('./partials/header')%>
+    <% } %>
+
+    <!-- /Header -->
+
+    <div class="container products-wrapper">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="products-title">Agregar productos</h2>
+            </div>
+
+            <div  class="formulario"  >
+                <form action="/products/edit" method="POST" enctype="multipart/form-data">
+
+                    <<p>
+                        <label for="model"> Modelo</label>
+                        <input type="text" name="model" id="model">
+                    </p>
+                    <p>
+                        <label for="marca">Marca</label>
+                        <input type="text" name="marca" id="marca">
+                    </p>
+                    <p>
+                        <label for="year"> Año</label>
+                        <input type="number" name="year" id="year">
+                    </p>
+                    <p>
+                        <label for="price">Precio</label>
+                        <input type="number" name="price" id="price">
+                    </p>
+                    <p>
+                        <label for="imagen">Imagen</label>
+                        <input type="file" name="imagen" id="imagen">
+                    </p>
+
+                    <h2><input type="submit" class="boton"> Editar producto</input></h2>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <%- include('./partials/footer')%>
+    <!-- /footer -->
+</body>
+
+</html>

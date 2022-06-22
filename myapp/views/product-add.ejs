@@ -17,24 +17,29 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 					<div>
-						<form method="get">
+						<form action="/products/add" method="post">
 							<p>
-								<label for="nombreDelProducto"> Nombre del Producto</label>
-								<input type="text" name="nombreDelProducto" id="nombreDelProducto">
+								<label for="model"> Modelo</label>
+								<input type="text" name="model" id="model">
 							</p>
 							<p>
-								<label for="descripcion">Descripcion</label>
-								<input type="text" name="descripcion" id="descripcion">
+								<label for="marca">Marca</label>
+								<input type="text" name="marca" id="marca">
+							</p>
+							<p>
+								<label for="year"> Año</label>
+								<input type="number" name="year" id="year">
+							</p>
+							<p>
+								<label for="price">Precio</label>
+								<input type="number" name="price" id="price">
 							</p>
 							<p>
 								<label for="imagen">Imagen</label>
 								<input type="file" name="imagen" id="imagen">
 							</p>
-							<p>
-								<label for="fechaDeCarga"> Fecha de Carga </label>
-								<input type="date" id="fechaDeCarga" name="fechaDeCarga" min="1966-01-01"
-									max="2022-12-31">
-							</p>
+		
+							<h2><input type="submit" class="boton"> </input></h2>
 						</form>
 					</div>
 
