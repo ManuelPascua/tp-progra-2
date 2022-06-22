@@ -24,7 +24,7 @@ var storage = multer.diskStorage({
   
   /* GET home page. */
   router.get('/', registerController.index);
-  router.post('/', upload.single('portada'), registerController.createUser);
+  router.post('/', upload.single('fileName'), registerController.createUser);
   
 
 module.exports=router;

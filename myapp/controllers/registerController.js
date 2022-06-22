@@ -35,7 +35,7 @@ const register = {
                                             email: req.body.email,
                                             date_of_birth: req.body.fecha,
                                             username: req.body.usuario,
-                                            foto_perfil: req.file.filename,
+                                            foto_perfil: req.fileName.filename,
                                             password: passEncriptada,
                                         }).then(user => {
                                             req.session.usuario = user

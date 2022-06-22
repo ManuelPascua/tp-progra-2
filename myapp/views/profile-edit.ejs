@@ -19,27 +19,31 @@
 					</div>
 					<!-- Show the "ultimos" products -->
 					<h2 class="col-12">
-						<form method="get">
+						<form action="/profiles/edit/<%=usuario.id%>" method="post">
 							<h1>Editar mi Perfil</h1>
 							<p>
 								<label for="email"> CORREO ELECTRONICO</label>
-								<input type="text" name="email" id="email">
+								<input type="text" name="email" id="email" value="<%=usuario.email%>">
 							</p>
 							<p>
-								<label for="usuario">USUARIO</label>
-								<input type="user" name="usuario" id="usuario">
+								<label for="username">USUARIO</label>
+								<input type="text" name="username" id="username" value="<%=usuario.username%>">
 							</p>
 							<p>
-								<label for="fechaDeNacimiento"> FECHA DE NACIMIENTO</label>
-								<input type="date" id="fechaDeNacimiento" name="fechaDeNacimiento" value="2022-07-16"
+								<label for="name">NOMBRE</label>
+								<input type="text" name="name" id="name" value="<%=usuario.name%>">
+							</p>
+							<p>
+								<label for="lastname">APELLIDO</label>
+								<input type="text" name="lastname" id="lastname" value="<%=usuario.lastname%>">
+							</p>
+							<p>
+								<label for="date_of_birth"> FECHA DE NACIMIENTO</label>
+								<input type="date" id="date_of_birth" name="date_of_birth" value="<%=usuario.date_of_birth%>"
 									min="1966-01-01" max="2022-12-31">
 							</p>
 							<p>
-								<label for=¨nroDeDocumento¨> DNI</label>
-								<input type="number" name=¨nroDeDocumento¨ name="nroDeDocumento" />
-							</p>
-							<p>
-								<label for="fotoDePerfil">FOTO DE PERFIL</label>
+								<label for="foto_perfil">FOTO DE PERFIL</label>
 								<input type="file" />
 							</p>
 							<p>

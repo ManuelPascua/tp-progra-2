@@ -9,6 +9,9 @@ const profiles = {
                     association: 'productos',
                     include: [{
                         association: 'comentarios'
+                    },
+                    {
+                        association: 'usuario'
                     }]
                 },
                 {
@@ -41,7 +44,7 @@ const profiles = {
 
     },
     edit: (req, res) => {
-        db.usuario.findByPk(req.params.id).then(resultado => {
+        db.User.findByPk(req.params.id).then(resultado => {
             res.render('profile-edit', {
                 usuario: resultado
             })
@@ -52,34 +55,34 @@ const profiles = {
         if (req.body.password) {
             let passEncriptada = bcrypt.hashSync(req.body.password);
             db.User.update({
-                name: req.body.nombre,
-                last_name: req.body.apellido,
+                name: req.body.name,
+                lastname: req.body.lastname,
                 email: req.body.email,
-                nacimiento: req.body.fecha,
-                username: req.body.usuario,
+                date_of_birth: req.body.date_of_birth,
+                username: req.body.username,
                 password: passEncriptada
             }, {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }).then(resultado => {
                 //res.send(req.session.usuario)
-                res.redirect('/profile/id/' + req.body.id)
+                return res.redirect('/profiles/' + req.params.id)
             })
         } else {
             db.User.update({
-                name: req.body.nombre,
-                last_name: req.body.apellido,
+                name: req.body.name,
+                lastname: req.body.lastname,
                 email: req.body.email,
-                nacimiento: req.body.fecha,
-                username: req.body.user,
+                date_of_birth: req.body.date_of_birth,
+                username: req.body.username,
             }, {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }).then(resultado => {
                 //res.send(resultado)
-               res.redirect('/profile/id/' + req.body.id)
+               return res.redirect('/profiles/' + req.params.id)
             })
         }
     }
