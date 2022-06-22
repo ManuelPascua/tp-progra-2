@@ -131,7 +131,6 @@ const products= {
 
     comment: (req, res) => {
         if (req.session.usuario) {
-            console.log(req.body.comment)
             if (req.body.comment.length == 0) {
                 res.redirect('/product/id/' + req.body.id)
             }

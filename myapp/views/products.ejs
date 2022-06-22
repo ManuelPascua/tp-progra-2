@@ -20,15 +20,27 @@
 			
 			<h2 class="products-title"> <%= producto.marca %>  </h2> 
 
-			
-		
-			<p class="product-detail-description">
+				<% if (logueado && miUsuario.id==producto.user_id) { %>
+					<p class="product-detail-description">
 
-				<a href="/products/product-add">Editar</a>
-			</p>
+						<a class="editarProd" href="/products/edit/<%= producto.id %>" >Editar </a>
+
+					</p>
+
+					<form action="/products/delete/<%= producto.id %>" method="POST">
+						<input type="hidden" name="usuario_id" value="<%= producto.users_id %> ">
+
+						<button type="submit" class="btn btn-outline-light"> 
+							<i class="fas fa-trash" style="color: #B99871;"></i>
+						</button>
+
+					</form>
+					
+				<% } %>
+	
 		</div>
 
-		
+		<h3>Producto de: <a href="/profile/id/<%= producto.usuario.id %>"><%= producto.usuario.name %></a> </h3>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
@@ -53,7 +65,7 @@
 						<% } %>
 
 					</section>
-					<form class="form" action="" method="POST">
+					<form class="form" action="/products/comment" method="POST" enctype="multipart/form-data">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
