@@ -117,12 +117,12 @@ const products= {
 
     delete: (req, res) => {
         if (!req.session.usuario || req.session.usuario.id != req.body.usuario_id) {
-            res.redirect('/')
+            return res.redirect('/')
         }
         let idProducto = req.params.id
         db.Comment.destroy({
             where: {
-                id_producto: id_producto
+                product_id: idProducto
             }
         }).then(() => {
             db.Product.destroy({

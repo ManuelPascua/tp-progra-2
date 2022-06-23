@@ -28,7 +28,7 @@
 					</p>
 
 					<form action="/products/delete/<%= producto.id %>" method="POST">
-						<input type="hidden" name="usuario_id" value="<%= producto.users_id %> ">
+						<input type="hidden" name="usuario_id" value="<%= producto.user_id %> ">
 
 						<button type="submit" class="btn btn-outline-light"> 
 							<i class="fas fa-trash" style="color: #B99871;"></i>
@@ -48,7 +48,7 @@
 					<p class="product-detail-description">
 						<%= producto.model %> 
 						</p>
-						<img src="<%= producto.foto %> " alt="" class="product-detail-img">
+						<img src="../public/images/products/<%=producto.foto %> " alt="" class="product-detail-img">
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
