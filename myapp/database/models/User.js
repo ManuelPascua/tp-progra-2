@@ -76,7 +76,7 @@ module.exports= (sequelize, dataType) =>{
             as: "productos",
             foreignKey: "user_id"
         });
-        User.hasMany(db.Comment, { // usuario hace muchos comentarios (a su vez, en muchos productos)
+        User.hasMany(db.Comment, { // usuario hace muchos comentarios 
             as: "comentarios",
             foreignKey: "user_id"
         });

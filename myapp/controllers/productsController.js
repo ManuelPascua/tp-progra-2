@@ -139,7 +139,9 @@ const products= {
     comment: (req, res) => {
         if (req.session.usuario) {
             console.log(req.body)
-            
+            if (req.body.comment.length == 0) {
+                res.redirect('/product/id/' + req.body.id)
+            }
             db.Comment.create({
                 comment: req.body.comment,
                 product_id: req.body.id,
